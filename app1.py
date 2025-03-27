@@ -12,9 +12,9 @@ from pathlib import Path
 temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
 
-filename = "model.sv"
-with open(os.path.join(os.getcwd(), filename), 'rb') as file:
-	model = pickle.load(file)
+filename = Path.cwd() / "model.sv"
+with open(filename, 'rb') as file:
+    model = pickle.load(file)
 # otwieramy wcześniej wytrenowany model
 
 pclass_d = {0:"Pierwsza",1:"Druga", 2:"Trzecia"}
